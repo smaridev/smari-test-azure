@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh
 
 # check if the cs-file exists
 CS_FILE=$(snapctl get cs-file)
