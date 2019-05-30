@@ -44,6 +44,7 @@ parts:
       # - on armhf: https://github.com/Azure/azure-iotedge/releases/download/1.0.6.1/iotedge_1.0.6.1-1_armhf.deb      
     stage-packages:
       - libgcc1
+      - mount
     override-build: |
       snapcraftctl build
       # also make a lib{ssl,crypto}.so.1.0.2 symlink, as the iotedged binary has this
@@ -73,12 +74,4 @@ parts:
     plugin: dump
     source: 
       - on armhf: https://github.com/Azure/azure-iotedge/releases/download/1.0.7/libiothsm-std_1.0.7-1_armhf.deb      
-  wrapper-scripts:
-    plugin: dump
-    source: local-assets
-    stage-packages:
-      - mount
-    stage:
-      - config/daemon.json
-    prime:
-      - config/daemon.json
+  
